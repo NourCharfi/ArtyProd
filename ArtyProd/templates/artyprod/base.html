@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+        
+        <meta charset="utf-8">
+        <title>Nour && Malek</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link  href="/static/img/assets/favicon.png" rel="icon" type="image/png">
+        <link  href="/static/css/init.css" rel="stylesheet" type="text/css">
+        <link  href="/static/css/ion-icons.min.css" rel="stylesheet" type="text/css">
+        <link  href="/static/css/etline-icons.min.css" rel="stylesheet" type="text/css">
+        <link  href="/static/css/theme.css" rel="stylesheet" type="text/css">
+        <link  href="/static/css/custom.css" rel="stylesheet" type="text/css">
+        <link  href="/static/css/colors/purple.css" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700%7CRaleway:400,100,200,300%7CHind:400,300" rel="stylesheet" type="text/css">
+    </head>
+    <body data-fade-in="true">
+
+        <div class="pre-loader"><div></div></div>
+
+        <!-- Start Header -->
+        <nav class="navbar nav-down" data-fullwidth="true" data-menu-style="transparent" data-animation="shrink">
+                                        <!-- Styles: light, dark, transparent, transparent-to-dark | Animation: hiding, shrink -->
+            <div class="container">
+
+                <div class="navbar-header">
+                    <div class="container">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar top-bar"></span>
+                            <span class="icon-bar middle-bar"></span>
+                            <span class="icon-bar bottom-bar"></span>
+                        </button>
+                        <a class="navbar-brand to-top" href="#"><img  src="/static/img/assets/logo-light.png" class="logo-light" alt="#"><img  src="/static/img/assets/logo-dark.png" class="logo-dark" alt="#"></a>
+                    </div>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <div class="container">
+                        <ul class="nav navbar-nav menu-right">
+
+                            <!-- Each section must have corresponding ID ( #hero -> id="hero" ) -->
+                            <li><a href="{% url 'indexA' %}">Home</a></li>
+                            <li><a href="{% url 'ListService' %}">Services</a></li>
+                            <li><a href="{% url 'ListPersonnel' %}">Equipes</a></li>
+                     
+                           
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+                            <li><a href="{% url 'blogs' %}">Blogs</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'demande_projet' %}">demande_projet</a></li>
+                            <li><a href="{% url 'myprojects' %}">mes projets</a></li>
+                            <li><a href="{% url 'AffichageProjet' %}">Projets</a></li>
+                            <li><a href="{% url 'edit_profile' %}">profile</a></li>
+                            <li><a href="{% url 'client_profile' %}">profileClient</a></li>
+                            
+                           
+                              
+                                    <li><a href="{% url 'logout' %}">Déconnexion</a></li>
+                                  {% else %}
+                                    <li><a href="{% url 'login' %}">Connexion</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                  {% endif %}
+                                  <li> <a href="/admin/">Administration</a></li>
+                            <li class="nav-separator"></li>
+                            <li  class="nav-icon"><a href="http://facebook.com/" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                            <li  class="nav-icon"><a href="http://twitter.com/" target="_blank"><i class="ion-social-twitter"></i></a></li>
+                            <li  class="nav-icon"><a href="#" target="_blank"><i class="ion-help-buoy"></i></a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- End Header -->
+
+        <section id="hero" class="hero-fullscreen parallax" data-overlay-dark="7" style="height: 5px;">
+           
+            <div class="background-image">
+                <img  src="/static/img/logo.jpg" alt="#">
+            </div>
+            
+    </section>
+    {% block content %} {% endblock %}
+
+
+
+        <!-- Start Footer -->
+        <footer id="footer" class="footer style-1 dark">
+
+            <a href="index-2.html"><img  src="/static/img/assets/footer-logo.png" alt="#" class="mr-auto img-responsive"></a>
+            <ul>
+                <li><a href="https://www.twitter.com/" target="_blank" class="color"><i class="ion-social-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/" target="_blank" class="color"><i class="ion-social-facebook"></i></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" class="color"><i class="ion-social-linkedin"></i></a></li>
+                <li><a href="https://www.pinterest.com/" target="_blank" class="color"><i class="ion-social-pinterest"></i></a></li>
+                <li><a href="https://plus.google.com/" target="_blank" class="color"><i class="ion-social-googleplus"></i></a></li>
+            </ul>
+            <a href="https://www.templateshub.net" target="_blank">Templates Hub</a>
+            <p>Made with love for great people.</p>
+
+            <!-- Back To Top Button -->
+            <span><a class="scroll-top"><i class="ion-chevron-up"></i></a></span>
+
+        </footer>
+        <!-- End Footer -->
+
+        <script src="/static/js/jquery.js"></script>
+        <script src="/static/js/init.js"></script>
+        <script src="/static/js/scripts.js"></script>
+
+    </body>
+
+</html>

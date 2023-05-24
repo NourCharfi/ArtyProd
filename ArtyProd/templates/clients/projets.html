@@ -1,0 +1,40 @@
+{% extends 'artyprod/base.html' %}
+
+{% block content %}
+ 
+    <h1>Liste des projets</h1>
+
+    {% if projets %}
+    <div class="container" style="margin-bottom: 20px;">
+      <div class="row">
+        {% for projet in projets %}
+          <div class="col-md-6">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h2 class="card-title">{{ projet.libelle }}</h2>
+                <p class="card-text">{{ projet.description }}</p>
+                <div class="image-gallery">
+                  {% for image in projet.galerieprojet_set.all %}
+                    <img src="{{ image.media.url }}" width="100px" alt="{{ image.legende }}" class="project-image">
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+      <p>Aucun projet disponible pour le moment.</p>
+    {% endif %}
+ 
+{% endblock %}
+
+<style>
+  .project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+</style>

@@ -1,0 +1,20 @@
+{% extends 'artyprod/base.html' %}
+{% block content %} 
+
+<div class="container">
+    <div class="row">
+{% for service in services %}
+<div class="col-md-4 col-sm-6 feature-left">
+    <div class="feature-left-content">
+        <h4><strong>{{ service.type }}</strong></h4>
+        <p>{{ service.description }}</p>
+        {% if service.Img %}
+        <img src="{{ service.Img.url }}" alt="Service Image">
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}
